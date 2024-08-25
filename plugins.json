@@ -5,6 +5,7 @@
     "name": "Poe LLM Provider",
     "author": "DeskAI",
     "description": "A DeskAI plugin that can integrate Poe.",
-    "repo": "DeskAI/deskai-poe-plugin"
+    "repo": "DeskAI/deskai-poe-plugin",
+    "version": "v1.0.0"
   }
 ]
