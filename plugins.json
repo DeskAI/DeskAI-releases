@@ -1,0 +1,10 @@
+[
+  {
+    "id": "poe-llm-provider",
+    "icon": "https://psc2.cf2.poecdn.net/assets/favicon.svg",
+    "name": "Poe LLM Provider",
+    "author": "DeskAI",
+    "description": "A DeskAI plugin that can integrate Poe.",
+    "repo": "DeskAI/deskai-poe-plugin"
+  }
+]

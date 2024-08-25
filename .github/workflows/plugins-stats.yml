@@ -1,0 +1,71 @@
+name: Update Plugin Stats
+
+permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const fs = require('fs').promises;
+            const statsObj = {}
+
+            async function getDownloadCount(owner, repo) {
+              let stats = {};
+              let totalDownloads = 0;
+              
+              for await (const response of github.paginate.iterator(github.rest.repos.listReleases, {
+                owner,
+                repo,
+                per_page: 100
+              })) {
+                for (const release of response.data) {
+                  const version = release.tag_name;
+                  const downloadCount = release.assets.reduce((sum, asset) => sum + asset.download_count, 0);
+                  stats[version] = downloadCount;
+                  totalDownloads += downloadCount;
+                }
+              }
+              
+              stats.downloads = totalDownloads;
+              stats.updated = Date.now();
+              
+              return stats;
+            }
+
+            async function updatePluginStats() {
+              const data = JSON.parse(await fs.readFile('plugins.json', 'utf8'));
+              
+              for (const plugin of data) {
+                const [owner, repo] = plugin.repo.split('/');
+                try {
+                  const stats = await getDownloadCount(owner, repo);
+                  statsObj[plugin.id] = stats;
+                  console.log(`Updated stats for ${plugin.repo}`);
+                } catch (error) {
+                  console.error(`Error updating stats for ${plugin.repo}:`, error.message);
+                }
+              }
+              
+              await fs.writeFile('plugin-stats.json', JSON.stringify(statsObj, null, 2));
+            }
+
+            await updatePluginStats();
+
+      - run: |
+          git config --global user.name 'Stats Bot'
+          git config --global user.email 'dev@deskai.app'
+          git add plugin-stats.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update plugin stats" && git push)
