@@ -5,7 +5,25 @@
     "name": "Poe LLM Provider",
     "author": "DeskAI",
     "description": "A DeskAI plugin that can integrate Poe.",
-    "repo": "DeskAI/deskai-poe-plugin",
+    "repo": "DeskAI/Poe-LLM-provider",
+    "version": "v1.0.0"
+  },
+  {
+    "id": "web-search-tool",
+    "icon": "https://pfst.cf2.poecdn.net/base/image/12754249deaf6d37699d3c25805a7047aeb0545d37f2937024bee61d78d0efc4?w=1024&h=1024&pmaid=159888930",
+    "name": "Web Search Tool",
+    "author": "DeskAI",
+    "description": "A plugin for searching information from the internet.",
+    "repo": "DeskAI/search-tool",
+    "version": "v1.0.0"
+  },
+  {
+    "id": "Ollama-LLM-Provider",
+    "icon": "https://github.com/ollama/ollama/assets/3325447/0d0b44e2-8f4a-4e99-9b52-a5c1c741c8f7",
+    "name": "Ollama LLM Provider",
+    "author": "DeskAI",
+    "description": "Plugin for integrating ollama.",
+    "repo": "DeskAI/ollama-LLM-provider",
     "version": "v1.0.0"
   }
 ]
