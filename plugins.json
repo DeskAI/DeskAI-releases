@@ -6,7 +6,7 @@
     "author": "DeskAI",
     "description": "A DeskAI plugin that can integrate Poe.",
     "repo": "DeskAI/Poe-LLM-provider",
-    "version": "v1.0.1"
+    "version": "v1.0.3"
   },
   {
     "id": "web-search-tool",
@@ -15,7 +15,7 @@
     "author": "DeskAI",
     "description": "A plugin for searching information from the internet.",
     "repo": "DeskAI/search-tool",
-    "version": "v1.0.1"
+    "version": "v1.0.3"
   },
   {
     "id": "Ollama-LLM-Provider",
@@ -24,6 +24,6 @@
     "author": "DeskAI",
     "description": "Plugin for integrating ollama.",
     "repo": "DeskAI/ollama-LLM-provider",
-    "version": "v1.0.1"
+    "version": "v1.0.3"
   }
 ]
