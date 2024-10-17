@@ -1,23 +1,23 @@
 {
   "poe-llm-provider": {
-    "v1.0.2": 0,
-    "v1.0.1": 7,
-    "v1.0.0": 1,
-    "downloads": 8,
-    "updated": 1729040825031
-  },
-  "web-search-tool": {
-    "v1.0.2": 0,
-    "v1.0.1": 3,
-    "v1.0.0": 2,
-    "downloads": 5,
-    "updated": 1729040825221
-  },
-  "Ollama-LLM-Provider": {
-    "v1.0.2": 0,
+    "v1.0.2": 1,
     "v1.0.1": 9,
     "v1.0.0": 1,
-    "downloads": 10,
-    "updated": 1729040825423
+    "downloads": 11,
+    "updated": 1729127177790
+  },
+  "web-search-tool": {
+    "v1.0.2": 1,
+    "v1.0.1": 5,
+    "v1.0.0": 2,
+    "downloads": 8,
+    "updated": 1729127178004
+  },
+  "Ollama-LLM-Provider": {
+    "v1.0.2": 1,
+    "v1.0.1": 11,
+    "v1.0.0": 1,
+    "downloads": 13,
+    "updated": 1729127178188
   }
 }
